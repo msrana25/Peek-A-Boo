@@ -46,16 +46,17 @@ class MyGrid:
         for m in range(self.grid_size + 1):
             for n in range(self.grid_size + 1):
                 if m == 0 and n == 0:
-                    print("  ", end=" ")
+                    print("", end="\t")
 
                 elif m == 0:
                     char = chr(ord('A') + n - 1)
-                    print("[" + char + "]", end=" ")
+                    print("[" + char + "]", end="\t")
                 elif n == 0:
-                    print("[" + str(m - 1) + "]", end=" ")
+                    print("[" + str(m - 1) + "]", end="\t")
 
                 else:
-                    print(self.display_grid[m - 1][n - 1], end="   ")
+                    print(self.display_grid[m - 1][n - 1], end="\t")
+            print()
             print()
 
     def uncover_element(self, x, y):
@@ -124,7 +125,6 @@ class MyGrid:
             self.display_grid[coord1x][coord1y] = temp1
             self.display_grid[coord2x][coord2y] = temp2
             self.guess_count += 1
-            self.valid_guess_count += 1
             return False, 0
 
         
