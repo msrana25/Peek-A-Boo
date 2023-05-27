@@ -1,3 +1,4 @@
+# Author: ManpreetSingh Rana, StudentId: 40227463
 import os
 from grid import MyGrid
 import sys
@@ -36,7 +37,7 @@ else:
         print("5: Exit\n")
 
     def exception_handler():
-        input ("Press any key to continue ")
+        input ("Press enter to continue ")
     
     
     while flag:
@@ -45,14 +46,14 @@ else:
             print("You cheated - Loser!. You're score is 0!")
             cheat_flag = False
             print()
-            input("Press any key to start a new game! ")
+            input("Press enter to start a new game! ")
             grid_obj = MyGrid(grid_size)
             os.system("clear")
 
         if exit_flag:
             user_menu()
             exit_flag = False
-            input("Press any key to start a new game! ")
+            input("Press enter to start a new game! ")
             grid_obj = MyGrid(grid_size)
             os.system("clear")
 
@@ -61,7 +62,7 @@ else:
             print(f"Oh Happy Day. You've won!! Your score is {final_score}")
             win_flag = False
             print()
-            input("Press any key to start a new game! ")
+            input("Press enter to start a new game! ")
             grid_obj = MyGrid(grid_size)
             os.system("clear")
 
@@ -104,8 +105,8 @@ else:
                 rerun_flag = True
                 while(rerun_flag):
                     m = input("Enter cell coordinates (e.g., a0): ")
-                    if len(m) > 2:
-                        print("Input exceeds the maximum allowed length of 2. Please try again.")
+                    if len(m) > 2 or len(m) < 2:
+                        print("Input does not match the allowed length of 2. Please try again.")
                     else:
                         x = m[1]
                         y = m[0]
